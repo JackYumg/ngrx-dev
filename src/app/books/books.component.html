@@ -1,8 +1,0 @@
-<nz-select style="width: 170px;" [(ngModel)]="book" name="book" nzPlaceHolder="" nzAllowClear>
-  <nz-option
-    *ngFor="let item of bookList | async"
-    [nzLabel]="item.title"
-    [nzValue]="item.name"
-  >
-  </nz-option>
-</nz-select>

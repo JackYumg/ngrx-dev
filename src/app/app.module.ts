@@ -15,13 +15,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { CountComponent } from './count/count.component';
-import { counterReducer } from './count/ngrx/counter.reducer';
-import { reducer as BookReducers } from './books/ngrx/book.reducers';
 import { NzButtonModule, NzSelectModule } from 'ng-zorro-antd';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { BooksComponent } from './books/books.component';
-import { BookEffects } from './books/ngrx/book.effects';
 registerLocaleData(zh);
 const ANT_MODULES = [
   NzButtonModule,
@@ -30,8 +26,6 @@ const ANT_MODULES = [
 @NgModule({
   declarations: [
     AppComponent,
-    CountComponent,
-    BooksComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +33,9 @@ const ANT_MODULES = [
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ count: counterReducer, book: BookReducers }, {}),
+    StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([BookEffects]),
+    EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     ...ANT_MODULES
   ],
