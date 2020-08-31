@@ -17,7 +17,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { NzButtonModule, NzSelectModule } from 'ng-zorro-antd';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
-import { BooksComponent } from './books/books.component';
 registerLocaleData(zh);
 const ANT_MODULES = [
   NzButtonModule,
