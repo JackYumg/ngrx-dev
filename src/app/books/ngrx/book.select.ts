@@ -1,17 +1,13 @@
-import { createSelector ,  createFeatureSelector} from '@ngrx/store';
+import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { AppState } from './../../ngrx/app.select';
+export const featureKey = 'book';
 
-export const featureKey = 'feature';
-
-export interface FeatureState {
-    counter: number;
+export interface BookState {
+  books: any[];
 }
 
-export interface AppState {
-    feature: FeatureState;
-}
-
-export const selectFeature = createFeatureSelector<AppState, FeatureState>(featureKey);
+export const selectFeature = createFeatureSelector<AppState, BookState>(featureKey);
 export const selectFeatureCount = createSelector(
   selectFeature,
-  (state: FeatureState) => state.counter
+  (state: BookState) => state.books
 );

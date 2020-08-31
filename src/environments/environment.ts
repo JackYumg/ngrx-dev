@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  hrm: true
+  hrm: true,
+  useHash: false
 };
 
 /*

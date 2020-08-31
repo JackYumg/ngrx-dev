@@ -71,11 +71,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngrx-dev:build"
+            "browserTarget": "ngrx-dev:build",
+            "hmr": true
           },
           "configurations": {
             "production": {
               "browserTarget": "ngrx-dev:build:production"
+            },
+            "hmr": {
+              "browserTarget": "ngrx-dev:build:hmr",
+              "hmr": true
             }
           }
         },
