@@ -6,7 +6,7 @@
 
 ## 开发模式
 
-运行 `ng serve` 启动开发服务器. 浏览器输入 `http://localhost:4200/`. 当项目文件发生改变时该应用回自动刷新，重新加载
+运行 `npm i`安装依赖， `ng serve` 启动开发服务器. 浏览器输入 `http://localhost:4200/`. 当项目文件发生改变时该应用回自动刷新，重新加载
 
 ## Code scaffolding
 
