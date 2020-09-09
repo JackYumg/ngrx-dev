@@ -15,12 +15,13 @@ export class BooksComponent implements OnInit {
   book: any;
   bookList: Observable<any[]> = this.store.pipe(select(selectFeatureCount));
   constructor(
-
     private store: Store<any>
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(bookList());
   }
 
+  loadData(): void {
+    this.store.dispatch(bookList());
+  }
 }
