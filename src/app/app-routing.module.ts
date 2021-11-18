@@ -13,7 +13,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { useHash: environment.useHash }),
+    RouterModule.forRoot(routes, { useHash: environment.useHash, relativeLinkResolution: 'legacy' }),
     StoreModule.forRoot({
       router: routerReducer,
     }),
