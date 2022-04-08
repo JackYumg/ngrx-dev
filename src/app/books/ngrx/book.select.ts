@@ -5,7 +5,6 @@ export const featureKey = 'book';
 export interface BookState {
   books: any[];
 }
-
 export const selectFeature = createFeatureSelector<AppState, BookState>(featureKey);
 export const selectFeatureCount = createSelector(
   selectFeature,

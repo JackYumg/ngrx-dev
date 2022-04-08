@@ -18,7 +18,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CountComponent } from './count/count.component';
 import { counterReducer } from './count/ngrx/counter.reducer';
 import { reducer as BookReducers } from './books/ngrx/book.reducers';
-import { NzButtonModule, NzSelectModule } from 'ng-zorro-antd';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { BooksComponent } from './books/books.component';
 import { BookEffects } from './books/ngrx/book.effects';
@@ -76,9 +77,7 @@ export class AppModule {
     // recreate elements
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // inject your AppStore and grab state then set it on store
-    // var appState = this.AppStore.get()
     store.state = { data: 'yolo' };
-    // store.state = Object.assign({}, appState)
     // save input values
     store.restoreInputValues = createInputTransfer();
     // remove styles

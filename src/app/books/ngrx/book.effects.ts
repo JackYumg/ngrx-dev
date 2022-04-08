@@ -7,14 +7,17 @@ import { BOOKS_PAGE_LOAD, BOOKS_SUCCESS_LOAD, BOOKS_ERROR_LOAD } from './book.ac
 @Injectable()
 export class BookEffects {
     loadMovies$ = createEffect(() => {
-        return this.actions$.pipe(
+        const obs = this.actions$.pipe(
             ofType(BOOKS_PAGE_LOAD),
             mergeMap(() => this.bookServcie.getBookList().pipe(
-                map(books => ({ type: BOOKS_SUCCESS_LOAD, books: [books] })),
+                map(books => {
+                    return ({ type: BOOKS_SUCCESS_LOAD, books: [books] });
+                }),
                 catchError(() => of({ type: BOOKS_ERROR_LOAD }))
             ))
         );
-    });
+        return obs;
+    }, {});
 
     constructor(
         private actions$: Actions,
